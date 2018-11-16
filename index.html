@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>弹出框的登陆界面</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="favion.ico" type="imge/x-icon">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- <script type="text/javascript">
+    function loadXMLDoc()
+    {
+        var xmlhttp;
+
+
+        
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            let i = 3;
+            xmlhttp=new XMLHttpRequest();
+        }
+
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("POST","http://tech.sky31.top/login.php",true);
+        xmlhttp.send();
+    }
+    </script> -->
+</head>
+
+<body>
+    <!--<h1>AJAX</h1>
+    <button type="button" onclick="loadXMLDoc()">请求数据</button>
+    <div id="myDiv"></div>-->
+    <div class="narrow">点击登陆你就知道</div>
+    <div class="Boring">
+        <img src="two.jpg" style="margin-left: 250px;"/>
+    </div>
+
+    <!--弹出框是我抄的，但是我抄的挺认真的，大部分还是懂了-->
+    <button onclick="document.getElementById('box').style.display='block'">登录</button>
+
+    <div id="box" class="modal">
+        <span onclick="document.getElementById('box').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+        <form class="modal-content animate" action="http://tech.sky31.top/login.php" method="POST" onsubmit="return fal()">
+            <div class="imgcontainer">
+                <img src="one.jpg" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label><b>用户名</b></label>
+                <input type="text" placeholder="请输入用户名" id="username" name="username" required>
+
+                <label><b>密码</b></label>
+                <input type="password" placeholder="请输入密码" id="password" name="password" required>
+
+                <label><b>验证码</b></label>
+                <input type="text" placeholder="请输入验证码" id="code" name="code" required>
+                <img id="imgcode" src="http://tech.sky31.top/code.php" onclick="imgchange()"/>
+                
+
+                <button type="submit">登录</button>
+                <input type="checkbox" checked="checked">记住我
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('box').style.display='none'" class="cancelbtn">取消</button>
+                <span class="psw"><a href="#">忘记密码？</a></span>
+            </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
